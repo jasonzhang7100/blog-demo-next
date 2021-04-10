@@ -1,0 +1,20 @@
+.layout {
+  composes: comm_box from './comm.module.css';
+  padding: 1rem;
+  text-align: center;
+}
+
+.img {
+  margin-bottom: 1rem;
+}
+
+.introduction {
+  font-size: .8rem;
+  color: #999;
+}
+
+.account {
+  background-color: #999;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
