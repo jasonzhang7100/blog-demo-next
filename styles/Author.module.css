@@ -1,5 +1,5 @@
 .layout {
-  composes: comm_box from './comm.module.css';
+  composes: comm_box from './comm.css';
   padding: 1rem;
   text-align: center;
 }
@@ -8,13 +8,12 @@
   margin-bottom: 1rem;
 }
 
-.introduction {
+.summary {
   font-size: .8rem;
   color: #999;
 }
 
 .account {
+  margin: 0 .5rem;
   background-color: #999;
-  margin-left: .5rem;
-  margin-right: .5rem;
 }

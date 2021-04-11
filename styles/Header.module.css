@@ -1,4 +1,4 @@
-.header {
+.wrapper {
   overflow: hidden;
   height: 3.2rem;
   padding: .4rem;
@@ -11,7 +11,7 @@
   color: #1e90ff;
 }
 
-.logoText {
+.logo_text {
   margin-left: .8rem;
   font-size: .8rem;
   color: #999;
