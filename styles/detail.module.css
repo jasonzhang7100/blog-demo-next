@@ -8,3 +8,13 @@
   padding: 1.3rem;
   font-size: 1rem;
 }
+
+.nav_title {
+  border-bottom: 1px solid #1e90ff;
+  color: #888;
+  text-align: center;
+}
+
+.nav {
+  font-size: 12px; 
+}
