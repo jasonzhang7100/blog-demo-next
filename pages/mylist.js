@@ -53,7 +53,7 @@ const MyList = () => {
           />
         </Col>
 
-        <Col className="comm_box" xs={0} sm={0} md={7} lg={5} xl={4}>
+        <Col xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author />
           <Advert />
         </Col>

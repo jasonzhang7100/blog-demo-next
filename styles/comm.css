@@ -10,6 +10,10 @@
   font-size: .8rem;
 }
 
+.comm_center {
+  text-align: center;
+}
+
 .comm_wrapper {
   margin-top: .5rem;
 }
@@ -17,7 +21,7 @@
 .comm_main {
   padding: .3rem;
   border-radius: .3rem;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   margin-right: .5rem;
   background-color: #fff;
 }
@@ -25,7 +29,7 @@
 .comm_box {
   padding: .3rem;
   border-radius: .3rem;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   background-color: #FFF;
 }
 
@@ -36,4 +40,9 @@
 
 .comm_icon>span {
   padding: 0 20px 0 0;
+}
+
+.comm_breadcrumb {
+  padding: .5rem;
+  background-color: #e1f0ff;
 }
