@@ -1,4 +1,16 @@
-.comm_layout {
+.ant-menu {
+  line-height: 2.8rem;
+}
+
+.ant-menu-item {
+  font-size: 1rem;
+}
+
+.ant-breadcrumb {
+  font-size: .8rem;
+}
+
+.comm_wrapper {
   margin-top: .5rem;
 }
 
@@ -15,4 +27,13 @@
   border-radius: .3rem;
   border: 1px solid #eee;
   background-color: #FFF;
+}
+
+.comm_icon {
+  padding: .5rem;
+  color: #aaa;
+}
+
+.comm_icon>span {
+  padding: 0 20px 0 0;
 }

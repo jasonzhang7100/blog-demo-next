@@ -4,16 +4,7 @@
   color: #1e90ff;
 }
 
-.icon {
-  padding: .5rem;
-  color: #aaa;
-}
-
-.context {
+.content {
   padding: .5rem;
   color: #777;
-}
-
-.icon>span {
-  padding: 0 20px 0 0;
 }

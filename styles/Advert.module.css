@@ -1,9 +1,8 @@
-.ad_div {
-  composes: comm_box from './comm.module.css';
-  margin-top: .5rem;
+.wrapper {
+  composes: comm_wrapper comm_box from './comm.css';
 }
 
-.ad_div>div {
+.wrapper>div {
   overflow: hidden;
   border-radius: .3rem;
   margin-bottom: .2rem;

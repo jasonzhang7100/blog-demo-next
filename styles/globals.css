@@ -13,11 +13,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-.ant-menu {
-  line-height: 2.8rem;
-}
-
-.ant-menu-item {
-  font-size: 1rem;
-}
