@@ -42,6 +42,17 @@
   padding: 0 20px 0 0;
 }
 
+.comm_list_title {
+  padding: .5rem;
+  font-size: 1.3rem;
+  color: #1e90ff;
+}
+
+.comm_list_introduce {
+  padding: .5rem;
+  color: #777;
+}
+
 .comm_breadcrumb {
   padding: .5rem;
   background-color: #e1f0ff;

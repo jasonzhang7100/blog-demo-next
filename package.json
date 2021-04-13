@@ -8,7 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ant-design/compatible": "^1.0.8",
     "antd": "^4.15.0",
+    "axios": "^0.21.1",
     "babel-plugin-import": "^1.13.3",
     "markdown-navbar": "^1.4.3",
     "next": "10.1.3",
