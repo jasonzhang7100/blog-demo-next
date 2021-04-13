@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Head from 'next/head';
 import { Row, Col, Breadcrumb, Affix } from 'antd';
 import { CalendarOutlined, FolderOutlined, FireOutlined } from '@ant-design/icons';
@@ -10,91 +11,12 @@ import Header from '../components/Header';
 import Author from '../components/Author';
 import Advert from '../components/Advert';
 import Footer from '../components/Footer';
+import servicePath from '../config/apiUrl';
 import styles from '../styles/detail.module.css';
 
-const markdown = `# Markdown-Navbar Demo
+const Detail = (data) => {
 
-## Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-
-### Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-#### Chicken Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken Chicken.
-
-## Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-
-### Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-#### Chicken Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken Chicken.
-
-## Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-
-### Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-#### Chicken Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken Chicken.
-
-## Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-
-### Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-#### Chicken Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken Chicken.
-
-## Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-* Chicken Chicken Chicken Chicken Chicken.
-
-### Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken.
-
-#### Chicken Chicken Chicken Chicken
-
-Chicken Chicken Chicken Chicken Chicken Chicken.`;
-
-const Detail = () => {
+  const markdown = data.article_content;
 
   return (
     <>
@@ -115,13 +37,13 @@ const Detail = () => {
 
           <div>
             <div className={styles.title}>
-              React实战视频教程-技术胖Blog开发(更新08集)
-              </div>
+              {data.title}
+            </div>
 
             <div className="comm_icon comm_center">
-              <span><CalendarOutlined /> 2019-06-28</span>
-              <span><FolderOutlined /> 视频教程</span>
-              <span><FireOutlined /> 5498人</span>
+              <span><CalendarOutlined /> {data.addTime}8</span>
+              <span><FolderOutlined /> {data.typeName}</span>
+              <span><FireOutlined /> {data.view_count}人</span>
             </div>
 
             <div className={styles.content}>
@@ -152,6 +74,20 @@ const Detail = () => {
       <Footer />
     </>
   );
+};
+
+Detail.getInitialProps = async context => {
+  // console.log(context.query);
+  let id = context.query.id;
+  const promise = new Promise(resolve => {
+    axios(servicePath.getArticleById + id).then(
+      res => {
+        resolve(res.data.data[0]);
+      }
+    );
+  });
+
+  return await promise;
 };
 
 export default Detail;
