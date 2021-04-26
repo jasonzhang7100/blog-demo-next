@@ -13,7 +13,7 @@
   color: #999;
 }
 
-.account {
+.summary>a {
+  display: inline-block;
   margin: 0 .5rem;
-  background-color: #999;
 }

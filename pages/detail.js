@@ -1,22 +1,41 @@
-import axios from 'axios';
 import Head from 'next/head';
+import axios from 'axios';
 import { Row, Col, Breadcrumb, Affix } from 'antd';
 import { CalendarOutlined, FolderOutlined, FireOutlined } from '@ant-design/icons';
-import ReactMarkdown from 'react-markdown';
-const gfm = require('remark-gfm');
+import marked from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/monokai-sublime.css';
 import MarkdownNavbar from 'markdown-navbar';
 import 'markdown-navbar/dist/navbar.css';
 
 import Header from '../components/Header';
 import Author from '../components/Author';
-import Advert from '../components/Advert';
+import Spread from '../components/Spread';
 import Footer from '../components/Footer';
 import servicePath from '../config/apiUrl';
-import styles from '../styles/detail.module.css';
+import styles from '../public/styles/detail.module.css';
 
-const Detail = (data) => {
+const Detail = data => {
 
-  const markdown = data.article_content;
+  const renderer = new marked.Renderer();
+
+  marked.setOptions(
+    {
+      renderer: renderer,
+      gfm: true,
+      pedantic: false,
+      sanitize: false,
+      tables: true,
+      breaks: false,
+      smartLists: true,
+      smartypants: false,
+      highlight: function (code) {
+        return hljs.highlightAuto(code).value;
+      }
+    }
+  );
+
+  const html = marked(data.article_content);
 
   return (
     <>
@@ -31,8 +50,8 @@ const Detail = (data) => {
 
           <Breadcrumb className="comm_breadcrumb">
             <Breadcrumb.Item><a href="/">Home</a></Breadcrumb.Item>
-            <Breadcrumb.Item>Video</Breadcrumb.Item>
-            <Breadcrumb.Item>Others</Breadcrumb.Item>
+            <Breadcrumb.Item><a href={`/mylist?id=${data.typeId}`}>{data.typeName}</a></Breadcrumb.Item>
+            <Breadcrumb.Item>articles</Breadcrumb.Item>
           </Breadcrumb>
 
           <div>
@@ -41,29 +60,28 @@ const Detail = (data) => {
             </div>
 
             <div className="comm_icon comm_center">
-              <span><CalendarOutlined /> {data.addTime}8</span>
+              <span><CalendarOutlined /> {data.addTime}</span>
               <span><FolderOutlined /> {data.typeName}</span>
-              <span><FireOutlined /> {data.view_count}人</span>
+              <span><FireOutlined /> {data.view_count} views</span>
             </div>
 
-            <div className={styles.content}>
-              <ReactMarkdown
-                children={markdown}
-                plugins={[gfm]}
-              />
+            <div
+              className={styles.content}
+              dangerouslySetInnerHTML={{ __html: html }}
+            >
             </div>
           </div>
         </Col>
 
         <Col xs={0} sm={0} md={7} lg={5} xl={4}>
           <Author />
-          <Advert />
+          <Spread />
           <Affix offsetTop={5}>
-            <div className="comm_wrapper comm_box">
-              <div className={styles.nav_title}>文章目录</div>
+            <div className={styles.nav_div}>
+              <div className={styles.nav_title}>Article Contents</div>
               <MarkdownNavbar
                 className={styles.nav}
-                source={markdown}
+                source={data.article_content}
                 ordered={false}
               />
             </div>
@@ -74,7 +92,7 @@ const Detail = (data) => {
       <Footer />
     </>
   );
-};
+}
 
 Detail.getInitialProps = async context => {
   // console.log(context.query);

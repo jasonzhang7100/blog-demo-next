@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css';
 
-import '../styles/globals.css';
-import '../styles/comm.css';
+import '../public/styles/globals.css';
+import '../public/styles/comm.css';
 
 const MyApp = ({ Component, pageProps }) => (
   <Component {...pageProps} />
