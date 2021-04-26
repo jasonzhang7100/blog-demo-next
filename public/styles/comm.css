@@ -1,0 +1,57 @@
+.ant-menu {
+  line-height: 2.8rem;
+}
+
+.ant-menu-item {
+  font-size: 1rem;
+}
+
+.ant-breadcrumb {
+  font-size: .8rem;
+}
+
+.comm_center {
+  text-align: center;
+}
+
+.comm_wrapper {
+  margin-top: .5rem;
+}
+
+.comm_main {
+  padding: .3rem;
+  border-radius: .3rem;
+  margin-right: .5rem;
+  background-color: #fff;
+}
+
+.comm_box {
+  padding: .3rem;
+  border-radius: .3rem;
+  background-color: #FFF;
+}
+
+.comm_icon {
+  padding: .5rem;
+  color: #aaa;
+}
+
+.comm_icon>span {
+  padding: 0 20px 0 0;
+}
+
+.comm_list_title {
+  padding: .5rem;
+  font-size: 1.3rem;
+  color: #1e90ff;
+}
+
+.comm_list_introduce {
+  padding: .5rem;
+  color: #777;
+}
+
+.comm_breadcrumb {
+  padding: .5rem;
+  background-color: #e1f0ff;
+}

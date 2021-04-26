@@ -1,0 +1,9 @@
+.wrapper {
+  composes: comm_wrapper comm_box from './comm.css';
+}
+
+.wrapper>a {
+  display: block;
+  border-radius: .3rem;
+  margin-bottom: .2rem;
+}

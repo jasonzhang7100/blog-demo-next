@@ -1,0 +1,19 @@
+.layout {
+  composes: comm_box from './comm.css';
+  padding: 1rem;
+  text-align: center;
+}
+
+.img {
+  margin-bottom: 1rem;
+}
+
+.summary {
+  font-size: .8rem;
+  color: #999;
+}
+
+.summary>a {
+  display: inline-block;
+  margin: 0 .5rem;
+}

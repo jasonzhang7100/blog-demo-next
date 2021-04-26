@@ -1,0 +1,13 @@
+.wrapper {
+  overflow: hidden;
+  height: 3.2rem;
+  padding: .4rem;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+.logo {
+  height: 38px;
+  margin-left: 1rem;
+  cursor: pointer;
+}
