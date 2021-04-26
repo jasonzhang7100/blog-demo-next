@@ -21,7 +21,6 @@
 .comm_main {
   padding: .3rem;
   border-radius: .3rem;
-  /* border: 1px solid #eee; */
   margin-right: .5rem;
   background-color: #fff;
 }
@@ -29,7 +28,6 @@
 .comm_box {
   padding: .3rem;
   border-radius: .3rem;
-  /* border: 1px solid #eee; */
   background-color: #FFF;
 }
 
