@@ -7,7 +7,17 @@
 }
 
 .logo {
-  height: 38px;
+  display: inline-block;
+  height: 37px;
   margin-left: 1rem;
+  color: #1e90ff;
+  font-size: 2rem;  
+  line-height: 37px;
   cursor: pointer;
+}
+
+.logo_text {
+  margin-left: .5rem;
+  color: #999;
+  font-size: .8rem;
 }
