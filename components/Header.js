@@ -37,8 +37,9 @@ const Header = () => {
     <Row className={styles.wrapper}>
       <Col xs={24} sm={24} md={10} lg={12} xl={15}>
         <Link href={{ pathname: '/' }}>
-          <img src="../static/JZblog_logo.png" alt="logo" className={styles.logo} />
+          <span className={styles.logo}>JZblog</span>
         </Link>
+        <span className={styles.logo_text}>focus on web development</span>
       </Col>
 
       <Col xs={0} sm={0} md={14} lg={12} xl={9}>
